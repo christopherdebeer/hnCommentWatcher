@@ -8,6 +8,7 @@ jQuery Bookmarklet loader/initialiser
 
 // Loadem Up!
 (function(opts){fullFunc(opts)})({
+    css: [],
     js : [
         hncBase + "hnCommentWatcher.js"
     ],
