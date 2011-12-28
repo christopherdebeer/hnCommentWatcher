@@ -15,11 +15,11 @@ jQuery Bookmarklet loader/initialiser
     ready : function() {
 
         // Only works on the main page
-        var loc = window.document.location;
-        if(loc.hostname !== "news.ycombinator.com" || loc.pathname !== "/item" ){
-            alert("Only works on Hacker News item/post page:\nhttp://news.ycombinator.com/item");
-            return;
-        };
+        // var loc = window.document.location;
+        // if(loc.hostname !== "news.ycombinator.com" || loc.pathname !== "/item" ){
+        //     alert("Only works on Hacker News item/post page:\nhttp://news.ycombinator.com/item");
+        //     return;
+        // };
 
         // Start the show.
         init();
