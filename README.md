@@ -11,5 +11,6 @@ I just threw this together it needs alot of refactoring and has comeblatant copy
 
 *bookmarklet*
 
+Use the code below in a bookmark:
 
-[hnCommentWatcher]<javascript:(function(){window.hncBase='https://github.com/christopherdebeer/hnCommentWatcher/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=hncBase+'hnCOmmentWatcher.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200>
+    javascript:(function(){window.hncBase='https://github.com/christopherdebeer/hnCommentWatcher/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=hncBase+'hnCOmmentWatcher.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200
