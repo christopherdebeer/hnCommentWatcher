@@ -194,6 +194,3 @@ var loop = function () {
     //     loop();
     // },50000); 
 }
-
-init();
-hnutimer.init(function(){loop();})
