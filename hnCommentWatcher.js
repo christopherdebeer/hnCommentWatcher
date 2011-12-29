@@ -23,23 +23,6 @@ var hnCW = {
     
     nextButton: $("<p><a class='nextNew' href='#'>Next</a>"),
 
-    init: function () {
-        _this = this;
-
-        _this.OP = $(".subtext:first a:first").text();
-        _this.commentCount = _this.getCommentCount();
-        _this.reapplyCSS();
-        $("body").attr("id","hnCW");
-        $(".default").each(function (comment) {
-
-            thisComment = processComment(comment)
-            _this.comments[thisComment.hash] = thisComment;
-        });
-    },
-
-    getCommentCount: function(){
-        return parseInt($(".subtext:first a:nth-child(4n)").text().replace(" comments",""));
-    },
     processComment: function(comment) {
 
         _this = comment;
@@ -68,6 +51,23 @@ var hnCW = {
         
         
         return thisComment; 
+    },
+    init: function () {
+        _this = this;
+
+        _this.OP = $(".subtext:first a:first").text();
+        _this.commentCount = _this.getCommentCount();
+        _this.reapplyCSS();
+        $("body").attr("id","hnCW");
+        $(".default").each(function (comment) {
+
+            thisComment = _this.processComment(comment)
+            _this.comments[thisComment.hash] = thisComment;
+        });
+    },
+
+    getCommentCount: function(){
+        return parseInt($(".subtext:first a:nth-child(4n)").text().replace(" comments",""));
     },
     reapplyCSS: function () {
       var $css = $("<style />");
@@ -99,7 +99,7 @@ var hnCW = {
             var first = true;
             $(".default").each(function (comment) {
                 
-                thisComment = processComment(comment);
+                thisComment = _this.processComment(comment);
 
                 // check if user is OP
                 if (thisComment.poster === _this.OP) {
