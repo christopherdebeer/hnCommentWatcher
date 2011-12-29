@@ -158,9 +158,9 @@ var hnCW = {
 
             $(".nextNew").click(function(e){
                 e.preventDefault();
-                $(this).remove();
                 var _comm = $(this).closest(".default");
                 _comm.removeClass("hncNew");
+                $(this).remove();
 
                 var nextNew = $(".hncNew:first");
                 if (nextNew.length > 0) {
