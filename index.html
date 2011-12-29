@@ -2,12 +2,32 @@
 <html>
 <head>
 	<title>hnCommentWatcher bookmarklet</title>
+	<style type="text/css">
+		html, body {
+			background-color: #fff;
+			margin: 0;
+			padding: 0;
+		}
+		#wrapper {
+			width: 85%;
+			margin: 0 auto;
+			background-color: #F6F6EF;
+		}
+		#header {
+			background-color: #FF6600;
+		}
+	</style>
 </head>
 <body>
 
 <div id="wrapper">
-	<div id="header">Hacker News</div>
+	<div id="header">
+		<img src="http://ycombinator.com/images/y18.gif" alt="Hacker News">
+		<span>Hacker News</span>
+	</div>
+	<p>hnCommentWatcher: yet another bookmarklet <a href="https://github.com/christopherdebeer/hnCommentWatcher">(https://github.com/christopherdebeer/hnCommentWatcher)</a></p>
 	<p>This is yet another bookmarklet for hacker news. by Christopher de Beer</p>
+	<a id="bookmerklet" href="javascript:(function(){window.hncBase='https://github.com/christopherdebeer/hnCommentWatcher/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=hncBase+'hnCW.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200">hnCommentWatcher</a>
 </div>
 
 </body>
