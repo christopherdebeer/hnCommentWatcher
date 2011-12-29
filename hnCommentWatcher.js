@@ -128,6 +128,7 @@ var hnCW = {
         _this.newComments = [];
 
         _this.showLoader();
+
         
         var thisUrl = document.location.href;
         $.get(thisUrl, function (data) {
@@ -135,6 +136,7 @@ var hnCW = {
             // update the page        
             $("body").html(data);
             $("body").attr("id","hnCW");
+            $(".pagetop:last").parent().prev("td").append("<span id='hncWatching'>hnCommentWatcher observing</span>");
             _this.showLoader();
             _this.reapplyCSS();
 
