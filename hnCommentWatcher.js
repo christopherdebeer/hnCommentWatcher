@@ -8,7 +8,7 @@ var hnCW = {
     init: function () {
         _this = this;
 
-        _this.OP = $(".subtext:first a:nth-child(2n)").text();
+        _this.OP = $(".subtext:first a:first").text();
         _this.commentCount = _this.getCommentCount();
         $(".default").each(function (comment) {
             var text = $(".comment", this).text();
@@ -46,7 +46,6 @@ var hnCW = {
 
 
                 var poster  = $(".comhead:first a:first", this).text();
-                console.log("poster: ", poster);
                 var text    = $(".comment", this).text();
                 var hashObj = Jenkins.hashlittle2(text,1);
                 var hash    = hashObj.b.toString() + hashObj.c.toString();
