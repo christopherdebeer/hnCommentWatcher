@@ -71,7 +71,7 @@ var hnCW = {
             console.log("no text");
             console.log(comment)       
         }
-        var hashObj = Jenkins.hashlittle2(window.btoa(txt),1);
+        var hashObj = Jenkins.hashlittle2(txt,1);
         var thisComment = {
             depth: parseInt($(comment).parent().find("td:first img").attr("width")) > 0 ? parseInt($(comment).parent().find("td:first img").attr("width")) / 40 : 0,
             poster: $(".comhead:first a:first", comment).text(),
@@ -82,7 +82,7 @@ var hnCW = {
             type: "old",
             age: 0
         }
-        console.log(window.btoa(txt));
+        console.log(txt);
         console.log(hashObj);
 
         // check if comment has a parent and siblings
