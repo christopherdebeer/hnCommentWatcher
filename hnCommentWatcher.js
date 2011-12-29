@@ -30,7 +30,7 @@ var hnCW = {
 
             console.log(comment)
             var txt = $(".comment", comment).text();
-            
+
         } else {
             var txt = "";        
         }
@@ -159,16 +159,9 @@ var hnCW = {
             $(".nextNew").click(function(e){
                 e.preventDefault();
                 var _comm = $(this).parent();
+                _comm.removeClass("hncNew");
 
-                var text = $(".comment", _comm).text();
-                var hashObj = Jenkins.hashlittle2(text,1);
-                var hash = hashObj.b.toString() + hashObj.c.toString();
-
-                var ind = _.indexOf(_this.newComments, _comm);
-
-                if (ind !== -1) {
-                    $.scrollTo($(_this.newComments[ind+1]),1000);
-                }
+                $.scrollTo($(".hncNew:first"),1000);
                 return false;
             });
         });
