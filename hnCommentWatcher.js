@@ -159,7 +159,7 @@ var hnCW = {
             $(".nextNew").click(function(e){
                 e.preventDefault();
                 var _comm = $(this).closest(".default");
-                _comm.removeClass("hncNew");
+                _comm.removeClass("hncNew").addClass("hncNewish");
                 $(this).remove();
 
                 var nextNew = $(".hncNew:first");
