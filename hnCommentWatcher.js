@@ -45,7 +45,7 @@ var hnCW = {
             $(".default").each(function (comment) {
 
 
-                var poster  = $(this, ".comhead a:first").text();
+                var poster  = $(this, ".comhead:first a:first").text();
                 console.log("poster: ", poster);
                 var text    = $(".comment", this).text();
                 var hashObj = Jenkins.hashlittle2(text,1);
