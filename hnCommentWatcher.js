@@ -4,6 +4,7 @@ var hnCW = {
     comments: {},
     commentCount: 0,
     newComments: [],
+    oldage: 1,
     css: "#hnCW .hncNew { \
             background-color: #86C444 !important; \
             border-radius: 5px !important; \
@@ -154,12 +155,14 @@ var hnCW = {
 
                     thisComment.age = _this.comments[thisComment.hash].age;
 
-                    if (thisComment.age > 1 ) {
+                    if (thisComment.age > _this.oldage ) {
                         $(this).removeClass("hncNew").removeClass("hncNewish");
                     } else {
                         $(this).addClass("hncNewish");
                     }
+
                     thisComment.age++;
+                    _this.comments[thisComment.hash] = thisComment;
 
                 // else its new
                 } else {
@@ -170,7 +173,7 @@ var hnCW = {
                     _this.newComments[thisComment.hash] = thisComment;
                     _this.comments[thisComment.hash] = thisComment;
 
-                    console.log("should have added comment to newComments: ", _this.newComments)
+                    // console.log("should have added comment to newComments: ", _this.newComments)
 
                     $(this).append(_this.nextButton.clone());
                     $(this).addClass("hncNew");
