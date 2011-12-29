@@ -62,7 +62,6 @@ var hnCW = {
         $(".default").each(function () {
 
             thisComment = _that.processComment(this);
-            console.log("debug?", _that);
             _that.comments[thisComment.hash] = thisComment;
         });
     },
