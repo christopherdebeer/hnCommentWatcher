@@ -164,7 +164,7 @@ var hnCW = {
 
                 var nextNew = $(".hncNew:first");
                 if (nextNew.length > 0) {
-                    $.scrollTo(mextNew,1000);
+                    $.scrollTo(nextNew,1000);
                 }                
                 return false;
             });
