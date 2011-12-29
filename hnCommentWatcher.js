@@ -155,7 +155,10 @@ var hnCW = {
                 $(".subtext:first a:nth-child(4n)").prepend("<span id='commDiff'>(+" + diff.toString() + ")</span> ");
             }
             var first = true;
-            $(".default").each(function (comment) {
+
+            var $coms = $(".default");
+            if ($coms.length <= 0){$("#hnCW #hncLoader").remove();}
+            $coms.each(function (comment) {
                 
                 thisComment = _this.processComment(comment);
 
