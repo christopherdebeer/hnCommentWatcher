@@ -93,7 +93,7 @@ var hnCW = {
                 var thisComment = {
                     poster: $(".comhead:first a:first", this).text(),
                     text: $(".comment", this).text(),
-                    hash: Jenkins.hashlittle2(text,1).b.toString() + Jenkins.hashlittle2(text,1).c.toString(),
+                    hash: Jenkins.hashlittle2(thisComment.text,1).b.toString() + Jenkins.hashlittle2(thisComment,1).c.toString(),
                     depth: commentDepth,
                     parent: parent,
                     siblings: siblings,
