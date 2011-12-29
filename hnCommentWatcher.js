@@ -50,6 +50,7 @@ var hnCW = {
     
     nextButton: $("<p><a class='nextNew' href='#'>Next</a>"),
     loadingOverlay: $("<div id='hncLoader'><div><p>hnCommentWatcher</p></div></div>"),
+    hncTitle: $("<span id='hncWatching'><a href='https://github.com/christopherdebeer/hnCommentWatcher'>hnCommentWatcher</a> observing</span>"),
 
     processComment: function(comment) {
 
@@ -96,7 +97,7 @@ var hnCW = {
         _that = this;
 
         $("body").attr("id","hnCW");
-        $(".pagetop:last").parent().prev("td").append("<span id='hncWatching'><a href='https://github.com/christopherdebeer/hnCommentWatcher'>hnCommentWatcher</a> observing</span>");
+        $(".pagetop:last").parent().prev("td").append(this.hncTitle);
         $(".default").each(function (comment) {
 
             thisComment = _that.processComment(comment);
@@ -136,7 +137,7 @@ var hnCW = {
             // update the page        
             $("body").html(data);
             $("body").attr("id","hnCW");
-            $(".pagetop:last").parent().prev("td").append("<span id='hncWatching'>hnCommentWatcher observing</span>");
+            $(".pagetop:last").parent().prev("td").append(_this.hncTitle);
             _this.showLoader();
             _this.reapplyCSS();
 
