@@ -77,6 +77,7 @@ var hnCW = {
                 var hash    = hashObj.b.toString() + hashObj.c.toString();
 
                 if (poster === _this.OP) {
+                    $(".comhead", this).prepend("OP: ");
                     $(this).addClass("hncOP");
                 }
 
