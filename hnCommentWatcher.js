@@ -54,7 +54,7 @@ var hnCW = {
         } \
         ",
     
-    nextButton: $("<p><a class='nextNew' href='#'>Next</a>"),
+    nextButton: $("<p><a class='nextNew' href='#'>Next new comment</a>"),
     loadingOverlay: $("<div id='hncLoader'><div><p>hnCommentWatcher</p></div></div>"),
     hncTitle: $("<span id='hncWatching'><a href='https://github.com/christopherdebeer/hnCommentWatcher'>hnCommentWatcher</a> observing</span>"),
 
@@ -190,15 +190,10 @@ var hnCW = {
                 // else its new
                 } else {
 
-                    // console.log("supposedly new (is it?): ", thisComment.text ,typeof _this.comments[thisComment.hash]);
-
                     // new comment
                     _this.newComments[thisComment.hash] = thisComment;
                     _this.comments[thisComment.hash] = thisComment;
 
-                    // console.log("should have added comment to newComments: ", _this.newComments)
-
-                    $(this).append(_this.nextButton.clone());
                     $(this).addClass("hncNew");
                     if (first) {$.scrollTo($(this), 1000); first = false;}
                 }
@@ -208,25 +203,35 @@ var hnCW = {
                 $("#hnCW #hncLoader").remove();
 
                 if (loopCounter >= commentNum) {
-                    alert("done looping should be: " + loopCounter.toString() + " comments");
+                    _this.postLoop();
                 }
                 loopCounter++;
 
 
             });
 
-            $(".nextNew").click(function(e){
-                e.preventDefault();
-                var _comm = $(this).closest(".default");
-                _comm.removeClass("hncNew").addClass("hncNewish");
-                $(this).remove();
+            
+        });
+    },
+    postLoop: function() {
 
-                var nextNew = $(".hncNew:first");
-                if (nextNew.length > 0) {
-                    $.scrollTo(nextNew,1000);
-                }                
-                return false;
-            });
+        var numNew = $(".hncNew").length;
+        if (numNew > 1) $(".hncNew").append(this.nextButton.clone())
+
+        $(".nextNew").click(function(e) {
+            e.preventDefault();
+            var _comm = $(this).closest(".default");
+            _comm.removeClass("hncNew").addClass("hncNewish");
+            $(this).remove();
+
+            var numNew = $(".hncNew").length;
+            if (numNew <= 1) $(".nextNew").remove();
+
+            var nextNew = $(".hncNew:first");
+            if (nextNew.length > 0) {
+                $.scrollTo(nextNew,1000);
+            }                
+            return false;
         });
     }
 }
