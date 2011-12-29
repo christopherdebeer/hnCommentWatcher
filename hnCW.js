@@ -8,9 +8,14 @@ jQuery Bookmarklet loader/initialiser
 
 // Loadem Up!
 (function(opts){fullFunc(opts)})({
-    css: [],
+    css: [
+        hncBase + "hnCommentWatcher.css"
+    ],
     js : [
-        "https://raw.github.com/documentcloud/underscore/master/underscore-min.js",
+        hncBase + "lib/hnutimer.js",
+        hncBase + "lib/jquery.scrollTo.js",
+        hncBase + "lib/jenkinsHash.js",
+        hncBase + "lib/underscore-1.2.3.min.js",
         hncBase + "hnCommentWatcher.js"
     ],
     ready : function() {
