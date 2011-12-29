@@ -123,6 +123,8 @@ var hnCW = {
                 // else its new
                 } else {
 
+                    console.log("supposedly new (is it?): ", thisComment, _this.comments);
+
                     // new comment
                     _this.newComments[thisComment.hash] = thisComment;
 
