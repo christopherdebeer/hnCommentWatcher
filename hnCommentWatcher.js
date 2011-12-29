@@ -177,7 +177,7 @@ var hnCW = {
                     if (first) {$.scrollTo($(this), 1000); first = false;}
                 }
 
-                $(this).attr("data-hncObj", thisComment);
+                $(this).data("hncobj", thisComment);
 
                 $("#hnCW #hncLoader").remove();
 
