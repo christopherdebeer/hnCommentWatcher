@@ -133,8 +133,8 @@ var hnCW = {
 
         _this = this;
         _this.newComments = [];
-
         _this.showLoader();
+        _this.commentCount = _this.getCommentCount();
 
         
         var thisUrl = document.location.href;
