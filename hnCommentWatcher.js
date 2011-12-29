@@ -76,8 +76,25 @@ var hnCW = {
                 var hashObj = Jenkins.hashlittle2(text,1);
                 var hash    = hashObj.b.toString() + hashObj.c.toString();
 
-                var parentCheck = parseInt($(this).parent().find("td:first img").attr("width"));
-                if(parentCheck > 0) {console.log("has parent: ",this)}
+                
+                // check if comment has a parent
+                var commentDepth = parseInt($(this).parent().find("td:first img").attr("width"));
+                var hasParent = false;
+                var parent = null;
+                var siblings = null;
+                if (commentDepth > 0) {
+
+                    hasParent = true;
+                    // count its siblings and get its rank
+
+                    parent = $(this).closest("table").closest("tr");
+                    sibligns = $("table", parent);
+
+
+                    commentDepth = commentDepth / 40;
+                } else {
+                    commentDepth = 0;
+                }
 
                 if (poster === _this.OP) {
                     $(".comhead", this).prepend("OP: ");
@@ -99,8 +116,11 @@ var hnCW = {
                     _this.newComments[hash] = this;
 
                     _this.comments[hash] = {
-                        parent: null,
+                        parent: parent,
+                        hasParent: hasParent,
+                        depth: commentDepth,
                         siblingsCount: null,
+                        siblings: siblings,
                         rank: 0
                     };
                     $(this).addClass("hncNew");
