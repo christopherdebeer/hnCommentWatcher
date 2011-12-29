@@ -1,6 +1,6 @@
 var hnCW = {
 
-    OP: "",
+    OP: $(".subtext:first a:first").text(),
     comments: {},
     commentCount: 0,
     newComments: [],
@@ -55,13 +55,13 @@ var hnCW = {
     init: function () {
         _this = this;
 
-        _this.OP = $(".subtext:first a:first").text();
         _this.commentCount = _this.getCommentCount();
         _this.reapplyCSS();
         $("body").attr("id","hnCW");
-        $(".default").each(function (comment) {
+        $(".default").each(function () {
 
-            thisComment = _this.processComment(comment)
+            thisComment = _this.processComment(this);
+            console.log("debug?");
             _this.comments[thisComment.hash] = thisComment;
         });
     },
