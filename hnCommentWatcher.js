@@ -158,7 +158,7 @@ var hnCW = {
 
             $(".nextNew").click(function(e){
                 e.preventDefault();
-                var _comm = $(this).parent();
+                var _comm = $(this).closest(".default");
                 _comm.removeClass("hncNew");
 
                 $.scrollTo($(".hncNew:first"),1000);
