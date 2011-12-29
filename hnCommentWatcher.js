@@ -208,7 +208,7 @@ var hnCW = {
                 $("#hnCW #hncLoader").remove();
 
                 if (loopCounter >= commentNum) {
-                    alert("done looping should be:", loopCounter, " comments");
+                    alert("done looping should be: " + loopCounter.toString() + " comments");
                 }
                 loopCounter++;
 
