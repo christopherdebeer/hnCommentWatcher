@@ -57,11 +57,11 @@ var hnCW = {
         this.commentCount = this.getCommentCount();
         this.reapplyCSS();
         _that = this;
-        
+
         $("body").attr("id","hnCW");
         $(".default").each(function () {
 
-            thisComment = _this.processComment(this);
+            thisComment = _that.processComment(this);
             console.log("debug?", _that);
             _that.comments[thisComment.hash] = thisComment;
         });
