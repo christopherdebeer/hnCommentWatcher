@@ -19,7 +19,15 @@ var hnCW = {
             border-radius: 15px 15px 15px 15px !important; \
             color: #FFFFFF !important; \
             padding: 5px 10px !important; \
-        }",
+        } \
+        #hnCW .loading { \
+            position: absolute; \
+            width: 100%; \
+            height: 100%; \
+            z-index: 999999; \
+            background-color: #000; \
+        } \
+        ",
     
     nextButton: $("<p><a class='nextNew' href='#'>Next</a>"),
 
@@ -89,6 +97,8 @@ var hnCW = {
 
         _this = this;
         _this.newComments = [];
+
+        $("body").append("<div class='loading' />");
         
         var thisUrl = document.location.href;
         $.get(thisUrl, function (data) {
@@ -96,6 +106,7 @@ var hnCW = {
             // update the page        
             $("body").html(data);
             $("body").attr("id","hnCW");
+            $("body").append("<div class='loading' />");
             _this.reapplyCSS();
 
             // check whats new
@@ -142,6 +153,8 @@ var hnCW = {
                     if (first) {$.scrollTo($(this), 1000); first = false;}
                     // _this.comments[thisComment.hash] = thisComment;
                 }
+
+                $("#hnCW .loading").remove();
 
 
             });
