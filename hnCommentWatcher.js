@@ -21,7 +21,7 @@ var hnCW = {
             padding: 5px 10px !important; \
         }",
     
-    nextButton: $("<p><a class='nextNew' href='#'>Next</a>");
+    nextButton: $("<p><a class='nextNew' href='#'>Next</a>"),
 
     init: function () {
         _this = this;
