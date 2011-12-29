@@ -53,7 +53,7 @@ var hnCW = {
                 var hash    = hashObj.b.toString() + hashObj.c.toString();
 
                 if (poster === _this.OP) {
-                    this.addClass("hncOP");
+                    $(this).addClass("hncOP");
                 }
 
                 if (typeof _this.comments[hash] !== 'undefined') {
