@@ -29,9 +29,9 @@ var hnCW = {
             top: 0; \
         } \
         #hnCW #hncLoader div{ \
-            width: 100px;
-            height: 100px;
-            background: url(" + hncBase + "assets/loader.gif) center center no-repeat #FF6600;
+            width: 100px; \
+            height: 100px; \
+            background: url(" + hncBase + "assets/loader.gif) center center no-repeat #FF6600; \
         } \
         ",
     
