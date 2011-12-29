@@ -70,9 +70,9 @@ var hnCW = {
             var first = true;
             $(".default").each(function (comment) {
                 
-
+                var txt = $(".comment", this).text();
                 // check if comment has a parent
-                var commentDepth = parseInt($(this).parent().find("td:first img").attr("width"));
+                var commentDepth = parseInt($(this).parent().find("td:first img").attr("width")) > 0 ? parseInt($(this).parent().find("td:first img").attr("width")) / 40 : 0;
                 var hasParent = false;
                 var parent = null;
                 var siblings = null;
@@ -83,17 +83,12 @@ var hnCW = {
 
                     parent = $(this).closest("table").closest("tr");
                     sibligns = $("table", parent);
-
-
-                    commentDepth = commentDepth / 40;
-                } else {
-                    commentDepth = 0;
-                }
+                } 
 
                 var thisComment = {
                     poster: $(".comhead:first a:first", this).text(),
-                    text: $(".comment", this).text(),
-                    hash: Jenkins.hashlittle2(thisComment.text,1).b.toString() + Jenkins.hashlittle2(thisComment,1).c.toString(),
+                    text: txt,
+                    hash: Jenkins.hashlittle2(txt,1).b.toString() + Jenkins.hashlittle2(txt,1).c.toString(),
                     depth: commentDepth,
                     parent: parent,
                     siblings: siblings,
