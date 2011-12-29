@@ -84,7 +84,7 @@ var hnCW = {
                 }
 
                 // check if comment has a parent
-                if (commentDepth > 0) {
+                if (thisComment.depth > 0) {
                     thisComment.parent = $(this).closest("table").closest("tr");
                     thisComment.sibligns = $("table", parent);
                 } 
