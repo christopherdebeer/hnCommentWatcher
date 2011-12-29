@@ -69,9 +69,7 @@ var hnCW = {
                     $(this).addClass("hncNew");
 
                     if (first) {$.scrollTo($(this), 1000); first = false;}
-                }
-
-                if 
+                } 
 
             });
 
