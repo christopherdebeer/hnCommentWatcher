@@ -88,7 +88,8 @@ var hnCW = {
                return false;
             });
         });
-        var css = $("<link />");
+        var css = $("<style />");
+        css.attr("type","text/css");
         css.html("#hnCW .hncNew { \
             background-color: #86C444 !important; \
             border-radius: 5px !important; \
