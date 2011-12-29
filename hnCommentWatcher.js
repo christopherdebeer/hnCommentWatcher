@@ -68,7 +68,8 @@ var hnCW = {
 
         } else {
             var txt = "";
-            console.log("no text");       
+            console.log("no text");
+            console.log(comment)       
         }
         var hashObj = Jenkins.hashlittle2(window.btoa(txt),1);
         var thisComment = {
