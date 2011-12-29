@@ -71,30 +71,25 @@ var hnCW = {
             $(".default").each(function (comment) {
                 
                 var txt = $(".comment", this).text();
-                // check if comment has a parent
-                var commentDepth = parseInt($(this).parent().find("td:first img").attr("width")) > 0 ? parseInt($(this).parent().find("td:first img").attr("width")) / 40 : 0;
-                var hasParent = false;
-                var parent = null;
-                var siblings = null;
-                if (commentDepth > 0) {
-
-                    hasParent = true;
-                    // count its siblings and get its rank
-
-                    parent = $(this).closest("table").closest("tr");
-                    sibligns = $("table", parent);
-                } 
 
                 var thisComment = {
+                    depth: parseInt($(this).parent().find("td:first img").attr("width")) > 0 ? parseInt($(this).parent().find("td:first img").attr("width")) / 40 : 0,
                     poster: $(".comhead:first a:first", this).text(),
                     text: txt,
                     hash: Jenkins.hashlittle2(txt,1).b.toString() + Jenkins.hashlittle2(txt,1).c.toString(),
-                    depth: commentDepth,
-                    parent: parent,
-                    siblings: siblings,
+                    parent: null,
+                    siblings: null,
                     type: "old",
                     age: 0
                 }
+
+                // check if comment has a parent
+                if (commentDepth > 0) {
+                    thisComment.parent = $(this).closest("table").closest("tr");
+                    thisComment.sibligns = $("table", parent);
+                } 
+
+
 
 
                 // check if user is OP
@@ -103,6 +98,8 @@ var hnCW = {
                     $(this).addClass("hncOP");
                 }
 
+
+                // does it exist already?
                 if (typeof _this.comments[thisComment.hash] !== 'undefined') {
 
                     if (_this.comments[thisComment.hash].age > 5 ) {
@@ -111,6 +108,8 @@ var hnCW = {
                         $(this).addClass("hncNewish");
                     }
                     thisComment.age++;
+
+                // else its new
                 } else {
 
                     // new comment
