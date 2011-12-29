@@ -52,6 +52,14 @@ var hnCW = {
         #hncWatching a:visited { \
             color: #fff; \
         } \
+        #hnCW .nextNew { \
+            background-color: #6D933B; \
+            border-radius: 12px 12px 12px 12px; \
+            display: block; \
+            margin-top: 10px; \
+            padding: 5px 10px; \
+            width: 133px; \
+        }\
         ",
     
     nextButton: $("<p><a class='nextNew' href='#'>Next new comment</a>"),
