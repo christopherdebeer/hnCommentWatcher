@@ -69,7 +69,7 @@ var hnCW = {
         } else {
             var txt = "";        
         }
-        var hashObj = Jenkins.hashlittle2(txt,1);
+        var hashObj = Jenkins.hashlittle2(window.btoa(txt),1);
         var thisComment = {
             depth: parseInt($(comment).parent().find("td:first img").attr("width")) > 0 ? parseInt($(comment).parent().find("td:first img").attr("width")) / 40 : 0,
             poster: $(".comhead:first a:first", comment).text(),
