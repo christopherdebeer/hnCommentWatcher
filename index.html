@@ -7,6 +7,8 @@
 			background-color: #fff;
 			margin: 0;
 			padding: 0;
+			font-family: Verdana, sans-serif;
+			font-size: 12px;
 		}
 		#wrapper {
 			width: 85%;
@@ -21,17 +23,21 @@
 		}
 		#header span {
 			font-weight: bold;
-			font-family: sans-serif;
 		}
 		#content {
 			padding: 10px;
 		}
 		#content a {
-			font-size: 12px;
-			color: #666;
+			font-size: 11px;
+			color: #828282;
+			text-decoration: none;
 		}
 		#content a:visited {
-			color: #666;
+			color: #828282;
+		}
+		#content .subtext {
+			color: #828282;
+    		font-size: 11px;
 		}
 	</style>
 </head>
@@ -44,6 +50,7 @@
 	</div>
 	<div id="content">
 		<p>hnCommentWatcher: yet another bookmarklet <a href="https://github.com/christopherdebeer/hnCommentWatcher">(https://github.com/christopherdebeer/hnCommentWatcher)</a></p>
+		<p class="subtext">9001 points by iambot 0 minutes ago | like | discuss</p>
 		<p>This is yet another bookmarklet for hacker news. by Christopher de Beer</p>
 		<a id="bookmerklet" href="javascript:(function(){window.hncBase='https://github.com/christopherdebeer/hnCommentWatcher/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=hncBase+'hnCW.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200">hnCommentWatcher</a>
 	</div>
