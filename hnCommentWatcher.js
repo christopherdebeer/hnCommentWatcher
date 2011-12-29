@@ -93,9 +93,16 @@ var hnCW = {
 
                     // new comment
                     $(this).append("<p><a class='nextNew' href='#'>Next</a>");
-                    _this.newComments.push(this);
+                    _this.newComments[hash] = this;
 
-                    _this.comments[hash] = 1;
+                    var parentCheck = parseInt($(this).parent().find("td:first img").attr("width"));
+                    if(parentCheck > 0) {console.log("has parent: ",this)}
+
+                    _this.comments[hash] = {
+                        parent = null,
+                        siblingsCount = null,
+                        rank = 0
+                    };
                     $(this).addClass("hncNew");
 
                     if (first) {$.scrollTo($(this), 1000); first = false;}
@@ -105,12 +112,20 @@ var hnCW = {
 
             $(".nextNew").click(function(e){
                 e.preventDefault();
-               var _this = $(this).parent();
-               var ind = _.indexOf(_this.newComments, _this);
-               if (ind !== -1) {
-                   $.scrollTo($(_this.newComments[ind+1]),1000);
-               }
-               return false;
+
+
+                var _comm = $(this).parent();
+
+                var text = $(".comment", _comm).text();
+                var hashObj = Jenkins.hashlittle2(text,1);
+                var hash = hashObj.b.toString() + hashObj.c.toString();
+
+                var ind = _.indexOf(_this.newComments, _comm);
+
+                if (ind !== -1) {
+                    $.scrollTo($(_this.newComments[ind+1]),1000);
+                }
+                return false;
             });
         });
     }
