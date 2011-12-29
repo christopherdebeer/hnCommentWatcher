@@ -28,7 +28,7 @@ var hnCW = {
         // if it has content
         if ($(".comment", comment).length > 0) {
 
-            console.log(comment)
+            // console.log(comment)
             var txt = $(".comment", comment).text();
 
         } else {
@@ -131,7 +131,7 @@ var hnCW = {
                 // else its new
                 } else {
 
-                    console.log("supposedly new (is it?): ", thisComment.text ,typeof _this.comments[thisComment.hash]);
+                    // console.log("supposedly new (is it?): ", thisComment.text ,typeof _this.comments[thisComment.hash]);
 
                     // new comment
                     _this.newComments[thisComment.hash] = thisComment;
