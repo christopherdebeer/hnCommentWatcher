@@ -26,6 +26,7 @@ var hnCW = {
 
         _this.OP = $(".subtext:first a:first").text();
         _this.commentCount = _this.getCommentCount();
+        _this.reapplyCSS();
         $("body").attr("id","hnCW");
         $(".default").each(function (comment) {
             var text = $(".comment", this).text();
@@ -57,6 +58,7 @@ var hnCW = {
             // update the page        
             $("body").html(data);
             $("body").attr("id","hnCW");
+            _this.reapplyCSS();
 
             // check whats new
             $("#commDiff").remove();
