@@ -76,6 +76,9 @@ var hnCW = {
                 var hashObj = Jenkins.hashlittle2(text,1);
                 var hash    = hashObj.b.toString() + hashObj.c.toString();
 
+                var parentCheck = parseInt($(this).parent().find("td:first img").attr("width"));
+                if(parentCheck > 0) {console.log("has parent: ",this)}
+
                 if (poster === _this.OP) {
                     $(".comhead", this).prepend("OP: ");
                     $(this).addClass("hncOP");
@@ -94,9 +97,6 @@ var hnCW = {
                     // new comment
                     $(this).append("<p><a class='nextNew' href='#'>Next</a>");
                     _this.newComments[hash] = this;
-
-                    var parentCheck = parseInt($(this).parent().find("td:first img").attr("width"));
-                    if(parentCheck > 0) {console.log("has parent: ",this)}
 
                     _this.comments[hash] = {
                         parent = null,
