@@ -61,7 +61,9 @@ var hnCW = {
         $(".default").each(function () {
 
             thisComment = _that.processComment(this);
+            thisComment.age = 6;
             _that.comments[thisComment.hash] = thisComment;
+
         });
     },
 
