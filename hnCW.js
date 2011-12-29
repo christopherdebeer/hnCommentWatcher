@@ -10,6 +10,7 @@ jQuery Bookmarklet loader/initialiser
 (function(opts){fullFunc(opts)})({
     css: [],
     js : [
+        "https://raw.github.com/documentcloud/underscore/master/underscore-min.js",
         hncBase + "hnCommentWatcher.js"
     ],
     ready : function() {
