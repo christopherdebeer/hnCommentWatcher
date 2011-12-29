@@ -69,17 +69,19 @@ var hnCW = {
         } else {
             var txt = "";        
         }
-
+        var hashObj = Jenkins.hashlittle2(txt,1);
         var thisComment = {
             depth: parseInt($(comment).parent().find("td:first img").attr("width")) > 0 ? parseInt($(comment).parent().find("td:first img").attr("width")) / 40 : 0,
             poster: $(".comhead:first a:first", comment).text(),
             text: txt,
-            hash: Jenkins.hashlittle2(txt,1).b.toString() + Jenkins.hashlittle2(txt,1).c.toString(),
+            hash: hashObj.b.toString() + hashObj.c.toString(),
             parent: null,
             siblings: null,
             type: "old",
             age: 0
         }
+
+        console.log(hashObj);
 
         // check if comment has a parent and siblings
         if (thisComment.depth > 0) {
