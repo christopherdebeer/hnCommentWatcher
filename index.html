@@ -51,6 +51,13 @@
     		display: block;
     		margin: 38px auto;
 		}
+		#bookmarklet {
+			background-color: #FEFEFE;
+		    border-radius: 10px 10px 10px 10px;
+		    color: #FF6600;
+		    font-weight: bold;
+		    padding: 5px 10px;
+		}
 	</style>
 </head>
 <body>
@@ -63,12 +70,12 @@
 	<div id="content">
 		<p>hnCommentWatcher: yet another bookmarklet <a href="https://github.com/christopherdebeer/hnCommentWatcher">(https://github.com/christopherdebeer/hnCommentWatcher)</a></p>
 		<p class="subtext">9001 points by iambot 0 minutes ago | like | discuss</p>
-		<p>I'm one of <s>those</s> many people that <s>enjoy</s> procratinate-by reading Hacker News. So in a helpless attempt to be <s>productive</s> efficient I've created hnCommentWatcher. Yet another HN bookmarklet. Currently I swear by @mrspeakers Hackemup bookmarklet [1], it really is brilliant, but its only for the front page, an I still find it painful to follow the comment threads for each post (which I belive I get the most use out of Hacker News). So <strong>hnCommentWatcher</strong> is my solution.</p>
+		<p>I'm one of <s>those</s> many people that <s>enjoy</s> procratinate-by reading Hacker News. So in a helpless attempt to be <s>productive</s> efficient I've created hnCommentWatcher. Yet another HN bookmarklet. Currently I swear by @mrspeaker's Hackemup bookmarklet [1], it really is brilliant, but its only for the front page, an I still find it painful to follow the comment threads for each post (which I believe I get the most use out of Hacker News). So this is my solution.</p>
 		<p><strong>What it does:</strong></p>
 		<p>hnCommentWatcher is a bookmarklet that you use on individual posts/threads, which then refreshes the page every so often and indicates which comments are new, and allows you to easily navigate between them, meaning you can open a thread read the comments then come back later and follow the discussion without having to decifer which comments are new and which you've already read.</p>
 		<p><strong>How to use it:</strong></p>
-		<p>Drag this bookmarklet: <a href="javascript:(function(){window.hncBase='https://github.com/christopherdebeer/hnCommentWatcher/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=hncBase+'hnCW.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200" id="bookmarklet">nCommentWatcher</a> to your bookmarks/favorites bar/folder, and click on it when you're on a post you want it to watch for you.</p>
-		<p>Also if you're inpaitient and you dont want to wait for its internal time to tick over just click the bookmarklet again to update right away.</p>
+		<p>Drag this bookmarklet: <a href="javascript:(function(){window.hncBase='https://github.com/christopherdebeer/hnCommentWatcher/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=hncBase+'hnCW.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200" id="bookmarklet">hnCommentWatcher</a> to your bookmarks/favorites bar/folder, and click on it when you're on a post you want it to watch for you.</p>
+		<p>Also if you're impatient and you dont want to wait for its internal time to tick over just click the bookmarklet again to update right away.</p>
 
 		<p>[1] <a href="http://www.mrspeaker.net/2011/04/11/hackernews-bookmarklet/">http://www.mrspeaker.net/2011/04/11/hackernews-bookmarklet/</a></p>
 
