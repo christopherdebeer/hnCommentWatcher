@@ -159,7 +159,7 @@ var hnCW = {
                 $(".subtext:first a:nth-child(4n)").prepend("<span id='commDiff'>(+" + diff.toString() + ")</span> ");
             }
             var first = true;
-            var loopCOunter = 1;
+            var loopCounter = 1;
 
             var $coms = $(".default");
             if ($coms.length <= 0){$("#hnCW #hncLoader").remove();}
@@ -210,6 +210,7 @@ var hnCW = {
                 if (loopCounter >= commentNum) {
                     alert("done looping");
                 }
+                loopCounter++;
 
 
             });
