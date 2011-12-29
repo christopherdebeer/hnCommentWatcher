@@ -30,7 +30,7 @@ var hnCW = {
         #hnCW #hncLoader div { \
             width: 200px; \
             padding: 20px; \
-            background: url(" + hncBase + "assets/loader.gif) center center no-repeat #FF6600; \
+            background: url(" + hncBase + "assets/loader.gif) center 35px no-repeat #FF6600; \
             margin: 100px auto; \
             border-radius: 10px; \
             color: #fff; \
@@ -38,7 +38,7 @@ var hnCW = {
             text-align: center; \
         } \
         #hnCW #hncLoader div p { \
-            margin-top: 70px; \
+            margin: 70px 0 0; \
         } \
         ",
     
