@@ -46,6 +46,12 @@ var hnCW = {
             color: #fff; \
             font-weight: bold; \
         } \
+        #hncWatching a { \
+            color: #fff; \
+        } \
+        #hncWatching a:visited { \
+            color: #fff; \
+        } \
         ",
     
     nextButton: $("<p><a class='nextNew' href='#'>Next</a>"),
