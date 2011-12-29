@@ -38,6 +38,9 @@
 			color: #828282;
 			text-decoration: none;
 		}
+		#content a.normalsize {
+			font-size: 12px;
+		}
 		#content a:visited {
 			color: #828282;
 		}
@@ -72,6 +75,7 @@
 		#content .example img {
 			float: right;
 		}
+
 	</style>
 </head>
 <body>
@@ -89,10 +93,12 @@
 			<p><strong>What it does:</strong></p>
 			<p>hnCommentWatcher is a bookmarklet that you use on individual posts/threads, which then refreshes the page every so often and indicates which comments are new, and allows you to easily navigate between them, meaning you can open a thread read the comments then come back later and follow the discussion without having to decifer which comments are new and which you've already read.</p>
 			<p><strong>How to use it:</strong></p>
-			<p>Drag this bookmarklet: <a href="javascript:(function(){window.hncBase='https://github.com/christopherdebeer/hnCommentWatcher/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=hncBase+'hnCW.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200" id="bookmarklet">hnCommentWatcher</a> to your bookmarks/favorites bar/folder, and click on it when you're on a post you want it to watch for you.</p>
-			<p>Also if you're impatient and you dont want to wait for its internal time to tick over just click the bookmarklet again to update right away.</p>
+			<p>Drag this bookmarklet: <a href="javascript:(function(){window.hncBase='https://github.com/christopherdebeer/hnCommentWatcher/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=hncBase+'hnCW.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200" id="bookmarklet">hnCommentWatcher</a> to your bookmarks/favorites bar/folder, and click on it when you're on a post you want it to watch for you. Also if you're impatient and you dont want to wait for its internal timer to tick over just click the bookmarklet again to update right away.</p>
 
-			<p>[1] <a href="http://www.mrspeaker.net/2011/04/11/hackernews-bookmarklet/">http://www.mrspeaker.net/2011/04/11/hackernews-bookmarklet/</a></p>
+			<p>[1] <a class="normalsize" href="http://www.mrspeaker.net/2011/04/11/hackernews-bookmarklet/">http://www.mrspeaker.net/2011/04/11/hackernews-bookmarklet/</a></p>
+
+			<p>Disclaimer:</p>
+			<p>This is a work in progress I just made it, so it might be a bit buggy in some browsers that I havnt tested yet. Also this page could do with a few proof reads. If you have any feedback or bug reports, please post them to <a class="normalsize" href="https://github.com/christopherdebeer/hnCommentWatcher/issues">the issues page of this projects github repo</a>. </p>
 		</div>
 
 
