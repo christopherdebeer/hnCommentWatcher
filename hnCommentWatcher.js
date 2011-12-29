@@ -53,7 +53,7 @@ var hnCW = {
         return thisComment; 
     },
     init: function () {
-        _this = this;
+        _that = this;
 
         _this.commentCount = _this.getCommentCount();
         _this.reapplyCSS();
@@ -61,8 +61,8 @@ var hnCW = {
         $(".default").each(function () {
 
             thisComment = _this.processComment(this);
-            console.log("debug?", _this);
-            _this.comments[thisComment.hash] = thisComment;
+            console.log("debug?", _that);
+            _that.comments[thisComment.hash] = thisComment;
         });
     },
 
