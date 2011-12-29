@@ -27,7 +27,10 @@ var hnCW = {
 
         // if it has content
         if ($(".comment", comment).length > 0) {
+
+            console.log(comment)
             var txt = $(".comment", comment).text();
+            
         } else {
             var txt = "";        
         }
