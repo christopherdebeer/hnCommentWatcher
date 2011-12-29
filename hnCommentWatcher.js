@@ -102,7 +102,7 @@ var hnCW = {
     },
 
     showLoader: function() {
-      $("body").append(this.loadingOverlay);  
+      $("body").append(this.loadingOverlay);
     },
 
     getCommentCount: function(){
@@ -176,6 +176,8 @@ var hnCW = {
                     $(this).addClass("hncNew");
                     if (first) {$.scrollTo($(this), 1000); first = false;}
                 }
+
+                $(this).attr("data-hncObj", thisComment);
 
                 $("#hnCW #hncLoader").remove();
 
