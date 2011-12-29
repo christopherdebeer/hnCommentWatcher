@@ -21,7 +21,9 @@ var hnCW = {
 
     loop: function () {
 
-        this.newComments = [];
+        _this = this;
+
+        _this.newComments = [];
         
         var thisUrl = document.location.href;
         $.get(thisUrl, function (data) {
@@ -31,9 +33,9 @@ var hnCW = {
 
             // check whats new
             $("#commDiff").remove();
-            var commentNum = this.getCommentCount();
-            if (commentNum > this.commentCount) {
-                var diff = commentNum - this.commentCount;
+            var commentNum = _this.getCommentCount();
+            if (commentNum > _this.commentCount) {
+                var diff = commentNum - _this.commentCount;
                 $(".subtext:first a:nth-child(4n)").prepend("<span id='commDiff'>(+" + diff.toString() + ")</span> ");
             }
             var first = true;
@@ -43,21 +45,21 @@ var hnCW = {
                 var hashObj = Jenkins.hashlittle2(text,1);
                 var hash = hashObj.b.toString() + hashObj.c.toString();
 
-                if (typeof this.comments[hash] !== 'undefined') {
+                if (typeof _this.comments[hash] !== 'undefined') {
 
-                    if (this.comments[hash] > 5 ) {
+                    if (_this.comments[hash] > 5 ) {
                         $(this).removeClass("hncNew").removeClass("hncNewish");
                     } else {
-                        this.comments[hash]++;
+                        _this.comments[hash]++;
                         $(this).addClass("hncNewish");
                     }
                 } else {
 
                     // new comment
                     $(this).append("<p><a class='nextNew' href='#'>Next</a>");
-                    this.newComments.push(this);
+                    _this.newComments.push(this);
 
-                    this.comments[hash] = 1;
+                    _this.comments[hash] = 1;
                     $(this).addClass("hncNew");
 
                     if (first) {$.scrollTo($(this), 1000); first = false;}
@@ -68,9 +70,9 @@ var hnCW = {
             $(".nextNew").click(function(e){
                 e.preventDefault();
                var _this = $(this).parent();
-               var ind = _.indexOf(this.newComments, _this);
+               var ind = _.indexOf(_this.newComments, _this);
                if (ind !== -1) {
-                   $.scrollTo($(this.newComments[ind+1]),1000);
+                   $.scrollTo($(_this.newComments[ind+1]),1000);
                }
                return false;
             });
