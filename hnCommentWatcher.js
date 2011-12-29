@@ -132,7 +132,7 @@ var commentCount = 0;
 var newComments = [];
 
 var init = function () {
-    commentCount = getCommentCount;
+    commentCount = getCommentCount();
     $(".default").each(function (comment) {
         var text = $(".comment", this).text();
         var hashObj = Jenkins.hashlittle2(text,1);
