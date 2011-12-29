@@ -139,22 +139,11 @@ var hnCW = {
                     $(this).append(_this.nextButton.clone());
                     $(this).addClass("hncNew");
                     if (first) {$.scrollTo($(this), 1000); first = false;}
-                    _this.comments[thisComment.hash] = thisComment;
+                    // _this.comments[thisComment.hash] = thisComment;
                 }
 
 
             });
-
-
-
-
-
-
-
-
-
-
-
 
             $(".nextNew").click(function(e){
                 e.preventDefault();
