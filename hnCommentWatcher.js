@@ -158,10 +158,14 @@ var hnCW = {
 
             $(".nextNew").click(function(e){
                 e.preventDefault();
+                $(this).remove();
                 var _comm = $(this).closest(".default");
                 _comm.removeClass("hncNew");
 
-                $.scrollTo($(".hncNew:first"),1000);
+                var nextNew = $(".hncNew:first");
+                if (if nextNew.length > 0) {
+                    $.scrollTo(mextNew,1000);
+                }                
                 return false;
             });
         });
