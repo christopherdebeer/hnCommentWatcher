@@ -10,6 +10,7 @@ var hnCW = {
 
         _this.OP = $(".subtext:first a:first").text();
         _this.commentCount = _this.getCommentCount();
+        $("body").attr("id","hnCW");
         $(".default").each(function (comment) {
             var text = $(".comment", this).text();
             var hashObj = Jenkins.hashlittle2(text,1);
@@ -33,6 +34,7 @@ var hnCW = {
 
             // update the page        
             $("body").html(data);
+            $("body").attr("id","hnCW");
 
             // check whats new
             $("#commDiff").remove();
@@ -49,6 +51,10 @@ var hnCW = {
                 var text    = $(".comment", this).text();
                 var hashObj = Jenkins.hashlittle2(text,1);
                 var hash    = hashObj.b.toString() + hashObj.c.toString();
+
+                if (poster === _this.OP) {
+                    this.addClass("hncOP");
+                }
 
                 if (typeof _this.comments[hash] !== 'undefined') {
 
