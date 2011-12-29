@@ -69,12 +69,6 @@ var hnCW = {
             }
             var first = true;
             $(".default").each(function (comment) {
-
-
-                var poster  = $(".comhead:first a:first", this).text();
-                var text    = $(".comment", this).text();
-                var hash    = Jenkins.hashlittle2(text,1).b.toString() + Jenkins.hashlittle2(text,1).c.toString();
-
                 
 
                 // check if comment has a parent
@@ -136,10 +130,19 @@ var hnCW = {
 
             });
 
+
+
+
+
+
+
+
+
+
+
+
             $(".nextNew").click(function(e){
                 e.preventDefault();
-
-
                 var _comm = $(this).parent();
 
                 var text = $(".comment", _comm).text();
