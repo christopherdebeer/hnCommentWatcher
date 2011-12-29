@@ -114,19 +114,20 @@ var hnCW = {
                     // new comment
                     $(this).append("<p><a class='nextNew' href='#'>Next</a>");
                     _this.newComments[hash] = this;
-
-                    _this.comments[hash] = {
-                        parent: parent,
-                        hasParent: hasParent,
-                        depth: commentDepth,
-                        siblingsCount: null,
-                        siblings: siblings,
-                        rank: 0
-                    };
                     $(this).addClass("hncNew");
 
                     if (first) {$.scrollTo($(this), 1000); first = false;}
-                } 
+                }
+
+                _this.comments[hash] = {
+                    parent: parent,
+                    hasParent: hasParent,
+                    depth: commentDepth,
+                    siblingsCount: null,
+                    siblings: siblings,
+                    rank: 0,
+                    element: this,
+                };
 
             });
 
