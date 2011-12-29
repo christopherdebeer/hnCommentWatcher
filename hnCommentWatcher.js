@@ -96,7 +96,7 @@ var hnCW = {
         _that = this;
 
         $("body").attr("id","hnCW");
-        $(".pagetop:last").parent().prev("td").append("<span id='hncWatching'>hnCommentWatcher observing</span>");
+        $(".pagetop:last").parent().prev("td").append("<span id='hncWatching'><a href='https://github.com/christopherdebeer/hnCommentWatcher'>hnCommentWatcher</a> observing</span>");
         $(".default").each(function (comment) {
 
             thisComment = _that.processComment(comment);
