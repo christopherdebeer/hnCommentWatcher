@@ -66,9 +66,9 @@ var hnCW = {
         _that = this;
 
         $("body").attr("id","hnCW");
-        $(".default").each(function () {
+        $(".default").each(function (comment) {
 
-            thisComment = _that.processComment(this);
+            thisComment = _that.processComment(comment);
             thisComment.age = 6;
             _that.comments[thisComment.hash] = thisComment;
 
