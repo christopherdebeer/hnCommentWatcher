@@ -163,7 +163,7 @@ var hnCW = {
                 _comm.removeClass("hncNew");
 
                 var nextNew = $(".hncNew:first");
-                if (if nextNew.length > 0) {
+                if (nextNew.length > 0) {
                     $.scrollTo(mextNew,1000);
                 }                
                 return false;
