@@ -36,7 +36,7 @@ var hnCW = {
         ",
     
     nextButton: $("<p><a class='nextNew' href='#'>Next</a>"),
-    loadingOverlay: "<div id='hncLoader'><div></div></div>"
+    loadingOverlay: $("<div id='hncLoader'><div></div></div>"),
 
     processComment: function(comment) {
 
@@ -105,7 +105,7 @@ var hnCW = {
         _this = this;
         _this.newComments = [];
 
-        $("body").append("");
+        $("body").append(_this.loadingOverlay);
         
         var thisUrl = document.location.href;
         $.get(thisUrl, function (data) {
@@ -113,7 +113,7 @@ var hnCW = {
             // update the page        
             $("body").html(data);
             $("body").attr("id","hnCW");
-            $("body").append("<div class='loading' />");
+            $("body").append(_this.loadingOverlay);
             _this.reapplyCSS();
 
             // check whats new
