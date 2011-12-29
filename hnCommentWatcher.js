@@ -20,7 +20,7 @@ var hnCW = {
             color: #FFFFFF !important; \
             padding: 5px 10px !important; \
         } \
-        #hnCW .loading { \
+        #hnCW #hncLoader { \
             position: absolute; \
             width: 100%; \
             height: 100%; \
@@ -28,9 +28,15 @@ var hnCW = {
             background-color: #000; \
             top: 0; \
         } \
+        #hnCW #hncLoader div{ \
+            width: 100px;
+            height: 100px;
+            background: url(" + hncBase + "assets/loader.gif) center center no-repeat #FF6600;
+        } \
         ",
     
     nextButton: $("<p><a class='nextNew' href='#'>Next</a>"),
+    loadingOverlay: "<div id='hncLoader'><div></div></div>"
 
     processComment: function(comment) {
 
@@ -99,7 +105,7 @@ var hnCW = {
         _this = this;
         _this.newComments = [];
 
-        $("body").append("<div class='loading' />");
+        $("body").append("");
         
         var thisUrl = document.location.href;
         $.get(thisUrl, function (data) {
