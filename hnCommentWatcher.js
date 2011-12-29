@@ -53,10 +53,11 @@ var hnCW = {
         return thisComment; 
     },
     init: function () {
-        _that = this;
 
-        _this.commentCount = _this.getCommentCount();
-        _this.reapplyCSS();
+        this.commentCount = this.getCommentCount();
+        this.reapplyCSS();
+        _that = this;
+        
         $("body").attr("id","hnCW");
         $(".default").each(function () {
 
