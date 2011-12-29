@@ -31,16 +31,41 @@ var hnCW = {
         _this.reapplyCSS();
         $("body").attr("id","hnCW");
         $(".default").each(function (comment) {
-            var text = $(".comment", this).text();
-            var hashObj = Jenkins.hashlittle2(text,1);
-            var hash = hashObj.b.toString() + hashObj.c.toString();
-
-            _this.comments[hash] = 6;
+            _this.comments[hash] = processComment(comment);
         });
     },
 
     getCommentCount: function(){
         return parseInt($(".subtext:first a:nth-child(4n)").text().replace(" comments",""));
+    },
+    processComment: function(comment) {
+
+        _this = comment;
+        var txt = $(".comment", _this).text();
+
+        var thisComment = {
+            depth: parseInt($(_this).parent().find("td:first img").attr("width")) > 0 ? parseInt($(_this).parent().find("td:first img").attr("width")) / 40 : 0,
+            poster: $(".comhead:first a:first", _this).text(),
+            text: txt,
+            hash: Jenkins.hashlittle2(txt,1).b.toString() + Jenkins.hashlittle2(txt,1).c.toString(),
+            parent: null,
+            siblings: null,
+            type: "old",
+            age: 0
+        }
+
+        // check if comment has a parent and siblings
+        if (thisComment.depth > 0) {
+            thisComment.parent = $(_this).closest("table").closest("tr");                    
+        } else {
+            thisComment.parent = null;
+        }
+
+        var sibs = $("table", thisComment.parent);
+        thisComment.siblings = sibs.length > 1 ? sibs.length : null; 
+        
+        
+        return thisComment; 
     },
     reapplyCSS: function () {
       var $css = $("<style />");
@@ -72,31 +97,7 @@ var hnCW = {
             var first = true;
             $(".default").each(function (comment) {
                 
-                var txt = $(".comment", this).text();
-
-                var thisComment = {
-                    depth: parseInt($(this).parent().find("td:first img").attr("width")) > 0 ? parseInt($(this).parent().find("td:first img").attr("width")) / 40 : 0,
-                    poster: $(".comhead:first a:first", this).text(),
-                    text: txt,
-                    hash: Jenkins.hashlittle2(txt,1).b.toString() + Jenkins.hashlittle2(txt,1).c.toString(),
-                    parent: null,
-                    siblings: null,
-                    type: "old",
-                    age: 0
-                }
-
-                // check if comment has a parent and siblings
-                if (thisComment.depth > 0) {
-                    thisComment.parent = $(this).closest("table").closest("tr");                    
-                } else {
-                    thisComment.parent = null;
-                }
-
-                var sibs = $("table", thisComment.parent);
-                thisComment.siblings = sibs.length > 1 ? sibs.length : null;
-
-
-
+                thisComment = processComment(comment);
 
                 // check if user is OP
                 if (thisComment.poster === _this.OP) {
