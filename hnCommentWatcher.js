@@ -73,10 +73,10 @@ var hnCW = {
 
                 var poster  = $(".comhead:first a:first", this).text();
                 var text    = $(".comment", this).text();
-                var hashObj = Jenkins.hashlittle2(text,1);
-                var hash    = hashObj.b.toString() + hashObj.c.toString();
+                var hash    = Jenkins.hashlittle2(text,1).b.toString() + Jenkins.hashlittle2(text,1).c.toString();
 
                 
+
                 // check if comment has a parent
                 var commentDepth = parseInt($(this).parent().find("td:first img").attr("width"));
                 var hasParent = false;
@@ -96,38 +96,43 @@ var hnCW = {
                     commentDepth = 0;
                 }
 
-                if (poster === _this.OP) {
+                var thisComment = {
+                    poster: $(".comhead:first a:first", this).text(),
+                    text: $(".comment", this).text(),
+                    hash: Jenkins.hashlittle2(text,1).b.toString() + Jenkins.hashlittle2(text,1).c.toString(),
+                    depth: commentDepth,
+                    parent: parent,
+                    siblings: siblings,
+                    type: "old",
+                    age: 0
+                }
+
+
+                // check if user is OP
+                if (thisComment.poster === _this.OP) {
                     $(".comhead", this).prepend("OP: ");
                     $(this).addClass("hncOP");
                 }
 
-                if (typeof _this.comments[hash] !== 'undefined') {
+                if (typeof _this.comments[thisComment.hash] !== 'undefined') {
 
-                    if (_this.comments[hash] > 5 ) {
+                    if (_this.comments[thisComment.hash].age > 5 ) {
                         $(this).removeClass("hncNew").removeClass("hncNewish");
                     } else {
-                        _this.comments[hash]++;
                         $(this).addClass("hncNewish");
                     }
+                    thisComment.age++;
                 } else {
 
                     // new comment
                     $(this).append("<p><a class='nextNew' href='#'>Next</a>");
-                    _this.newComments[hash] = this;
+                    _this.newComments[thisComment.hash] = thisComment;
                     $(this).addClass("hncNew");
 
                     if (first) {$.scrollTo($(this), 1000); first = false;}
                 }
 
-                _this.comments[hash] = {
-                    parent: parent,
-                    hasParent: hasParent,
-                    depth: commentDepth,
-                    siblingsCount: null,
-                    siblings: siblings,
-                    rank: 0,
-                    element: this,
-                };
+                _this.comments[thisComment.hash] = thisComment;
 
             });
 
