@@ -1,11 +1,14 @@
 var hnCW = {
 
+    OP: "",
     comments: {},
     commentCount: 0,
     newComments: [],
 
     init: function () {
         _this = this;
+
+        _this.OP = $(".subtext:first a:nth-child(2n)").text();
         _this.commentCount = _this.getCommentCount();
         $(".default").each(function (comment) {
             var text = $(".comment", this).text();
@@ -40,10 +43,13 @@ var hnCW = {
             }
             var first = true;
             $(".default").each(function (comment) {
-                
-                var text = $(".comment", this).text();
+
+
+                var poster  = $(this, ".comhead a:first").text();
+                console.log("poster: ", poster);
+                var text    = $(".comment", this).text();
                 var hashObj = Jenkins.hashlittle2(text,1);
-                var hash = hashObj.b.toString() + hashObj.c.toString();
+                var hash    = hashObj.b.toString() + hashObj.c.toString();
 
                 if (typeof _this.comments[hash] !== 'undefined') {
 
@@ -64,6 +70,8 @@ var hnCW = {
 
                     if (first) {$.scrollTo($(this), 1000); first = false;}
                 }
+
+                if 
 
             });
 
