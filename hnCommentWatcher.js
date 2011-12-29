@@ -31,7 +31,7 @@ var hnCW = {
             width: 200px; \
             padding: 20px; \
             background: url(" + hncBase + "assets/loader.gif) center 35px no-repeat #FF6600; \
-            margin: 100px auto; \
+            margin: 300px auto; \
             border-radius: 10px; \
             color: #fff; \
             font-weight: bold; \
