@@ -201,11 +201,13 @@ var loop = function () {
         });
 
         $(".nextNew").click(function(e){
+            e.preventDefault();
            var _this = $(this).parent();
            var ind = _.indexOf(newComments, _this);
            if (ind !== -1) {
                $.scrollTo($(newComments[ind+1]),1000);
-           } 
+           }
+           return false;
         });
     });
 
