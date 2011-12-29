@@ -20,6 +20,8 @@ var hnCW = {
             color: #FFFFFF !important; \
             padding: 5px 10px !important; \
         }",
+    
+    nextButton: $("<p><a class='nextNew' href='#'>Next</a>");
 
     init: function () {
         _this = this;
@@ -83,13 +85,15 @@ var hnCW = {
                     age: 0
                 }
 
-                // check if comment has a parent
+                // check if comment has a parent and siblings
                 if (thisComment.depth > 0) {
-                    thisComment.parent = $(this).closest("table").closest("tr");
+                    thisComment.parent = $(this).closest("table").closest("tr");                    
+                } else {
+                    thisComment.parent = null;
+                }
 
-                    var sibs = $("table", thisComment.parent);
-                    thisComment.siblings = sibs.length > 0 ? sibs.length : null;
-                } 
+                var sibs = $("table", thisComment.parent);
+                thisComment.siblings = sibs.length > 1 ? sibs.length : null;
 
 
 
@@ -104,7 +108,9 @@ var hnCW = {
                 // does it exist already?
                 if (typeof _this.comments[thisComment.hash] !== 'undefined') {
 
-                    if (_this.comments[thisComment.hash].age > 5 ) {
+                    thisComment.age = _this.comments[thisComment.hash].age;
+
+                    if (thisComment.age > 5 ) {
                         $(this).removeClass("hncNew").removeClass("hncNewish");
                     } else {
                         $(this).addClass("hncNewish");
@@ -115,10 +121,10 @@ var hnCW = {
                 } else {
 
                     // new comment
-                    $(this).append("<p><a class='nextNew' href='#'>Next</a>");
                     _this.newComments[thisComment.hash] = thisComment;
-                    $(this).addClass("hncNew");
 
+                    $(this).append(_this.nextButton.clone());
+                    $(this).addClass("hncNew");
                     if (first) {$.scrollTo($(this), 1000); first = false;}
                 }
 
