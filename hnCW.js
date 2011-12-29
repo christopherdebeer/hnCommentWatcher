@@ -28,8 +28,8 @@ jQuery Bookmarklet loader/initialiser
         // };
 
         // Start the show.
-        init();
-        hnutimer.init(function(){loop();})
+        hnCW.init();
+        hnutimer.init(function(){hnCW.loop();})
         
         // Open all links in a new tab.
         // ... I don't usually like to do such a thing, but by public demand...
