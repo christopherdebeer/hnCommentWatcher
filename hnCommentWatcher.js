@@ -80,7 +80,7 @@ var hnCW = {
             type: "old",
             age: 0
         }
-
+        console.log(window.btoa(txt));
         console.log(hashObj);
 
         // check if comment has a parent and siblings
