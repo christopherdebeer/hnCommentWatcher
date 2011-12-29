@@ -43,6 +43,7 @@ if (typeof window.hnCW !== "undefined") {
         }
     });
 
+}
     // jQuery bookmarklet magic...
     // ... by Brett Barros (& Paul Irish)
     // ... http://www.latentmotion.com/downloads/blank-bookmarklet-v1.js
@@ -52,4 +53,3 @@ if (typeof window.hnCW !== "undefined") {
     jqpath||"http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js";
     (function(b){var c=document.createElement("script");c.type="text/javascript";c.src=b;
     c.onload=function(){e(a.css);d(a.js)};document.body.appendChild(c)})(a.jqpath)};
-}
