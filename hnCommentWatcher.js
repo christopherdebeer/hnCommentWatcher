@@ -88,6 +88,24 @@ var hnCW = {
                return false;
             });
         });
+        var css = $("<link />");
+        css.html("#hnCW .hncNew { \
+            background-color: #86C444 !important; \
+            border-radius: 5px !important; \
+            padding: 15px !important; \
+        } \
+        #hnCW .hncNewish { \
+            background-color: #D0EDAF !important; \
+            border-radius: 5px !important; \
+            padding: 15px !important; \
+        } \
+        #hnCW .hncOP .comhead { \
+            background-color: #ff6600 !important; \
+            border-radius: 15px 15px 15px 15px !important; \
+            color: #FFFFFF !important; \
+            padding: 5px 10px !important; \
+        }");
+        $("body").append(css);
 
     }
 }
