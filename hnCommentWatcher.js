@@ -25,12 +25,11 @@ var hnCW = {
 
     processComment: function(comment) {
 
-        _this = comment;
-        var txt = $(".comment", _this).text();
+        var txt = $(".comment", comment).text();
 
         var thisComment = {
-            depth: parseInt($(_this).parent().find("td:first img").attr("width")) > 0 ? parseInt($(_this).parent().find("td:first img").attr("width")) / 40 : 0,
-            poster: $(".comhead:first a:first", _this).text(),
+            depth: parseInt($(comment).parent().find("td:first img").attr("width")) > 0 ? parseInt($(comment).parent().find("td:first img").attr("width")) / 40 : 0,
+            poster: $(".comhead:first a:first", comment).text(),
             text: txt,
             hash: Jenkins.hashlittle2(txt,1).b.toString() + Jenkins.hashlittle2(txt,1).c.toString(),
             parent: null,
@@ -41,7 +40,7 @@ var hnCW = {
 
         // check if comment has a parent and siblings
         if (thisComment.depth > 0) {
-            thisComment.parent = $(_this).closest("table").closest("tr");                    
+            thisComment.parent = $(comment).closest("table").closest("tr");                    
         } else {
             thisComment.parent = null;
         }
@@ -106,7 +105,6 @@ var hnCW = {
                     $(".comhead", this).prepend("OP: ");
                     $(this).addClass("hncOP");
                 }
-
 
                 // does it exist already?
                 if (typeof _this.comments[thisComment.hash] !== 'undefined') {
