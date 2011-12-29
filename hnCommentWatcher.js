@@ -119,8 +119,8 @@ var hnCW = {
       $("body").append(this.loadingOverlay);
     },
 
-    getCommentCount: function(){
-        return parseInt($(".subtext:first a:nth-child(4n)").text().replace(" comments",""));
+    getCommentCount: function() {
+        return $(".subtext:first a:nth-child(4n)").text() === "discuss" ? 0 : parseInt($(".subtext:first a:nth-child(4n)").text().replace(" comments",""));
     },
     reapplyCSS: function () {
       var $css = $("<style />");
