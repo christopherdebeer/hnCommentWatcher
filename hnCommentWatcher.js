@@ -26,6 +26,7 @@ var hnCW = {
             height: 100%; \
             z-index: 999999; \
             background-color: #000; \
+            top: 0; \
         } \
         ",
     
