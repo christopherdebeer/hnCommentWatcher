@@ -123,7 +123,7 @@ var hnCW = {
                 // else its new
                 } else {
 
-                    console.log("supposedly new (is it?): ", typeof _this.comments[thisComment.hash]);
+                    console.log("supposedly new (is it?): ", thisComment.text ,typeof _this.comments[thisComment.hash]);
 
                     // new comment
                     _this.newComments[thisComment.hash] = thisComment;
