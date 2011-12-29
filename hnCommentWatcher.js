@@ -25,7 +25,6 @@ var hnCW = {
             width: 100%; \
             height: 100%; \
             z-index: 999999; \
-            background-color: #000; \
             top: 0; \
         } \
         #hnCW #hncLoader div{ \
@@ -34,11 +33,14 @@ var hnCW = {
             background: url(" + hncBase + "assets/loader.gif) center center no-repeat #FF6600; \
             margin: 100px auto; \
             border-radius: 10px; \
+            color: #fff; \
+            font-weight: bold; \
+            text-align: center; \
         } \
         ",
     
     nextButton: $("<p><a class='nextNew' href='#'>Next</a>"),
-    loadingOverlay: $("<div id='hncLoader'><div></div></div>"),
+    loadingOverlay: $("<div id='hncLoader'><div><p>hnCommentWatcher</p></div></div>"),
 
     processComment: function(comment) {
 
