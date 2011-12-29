@@ -128,7 +128,8 @@ var Jenkins = {
 
 
 var comments = {};
-var commentCount = 0
+var commentCount = 0;
+var newComments = [];
 
 var init = function () {
     commentCount = getCommentCount;
@@ -148,6 +149,8 @@ var getCommentCount = function(){
 }
 
 var loop = function () {
+
+    newComments = [];
     
     var thisUrl = document.location.href;
     $.get(thisUrl, function (data) {
@@ -184,6 +187,7 @@ var loop = function () {
             } else {
 
                 // new comment
+                newComments.push(this);
 
                 comments[hash] = 1;
                 $(this).css("background-color", "#86C444")
