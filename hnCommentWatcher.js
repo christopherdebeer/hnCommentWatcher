@@ -113,7 +113,7 @@ var hnCW = {
 
                     thisComment.age = _this.comments[thisComment.hash].age;
 
-                    if (thisComment.age > 5 ) {
+                    if (thisComment.age > 1 ) {
                         $(this).removeClass("hncNew").removeClass("hncNewish");
                     } else {
                         $(this).addClass("hncNewish");
