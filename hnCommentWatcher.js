@@ -123,7 +123,7 @@ var hnCW = {
                 // else its new
                 } else {
 
-                    console.log("supposedly new (is it?): ", thisComment, _this.comments);
+                    console.log("supposedly new (is it?): ", thisComment, _this.comments[thisComment.hash]);
 
                     // new comment
                     _this.newComments[thisComment.hash] = thisComment;
@@ -131,9 +131,9 @@ var hnCW = {
                     $(this).append(_this.nextButton.clone());
                     $(this).addClass("hncNew");
                     if (first) {$.scrollTo($(this), 1000); first = false;}
+                    _this.comments[thisComment.hash] = thisComment;
                 }
 
-                _this.comments[thisComment.hash] = thisComment;
 
             });
 
