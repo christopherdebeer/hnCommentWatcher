@@ -187,6 +187,7 @@ var loop = function () {
             } else {
 
                 // new comment
+                $(this).append("<p><a class='nextNew' href='#'>Next</a>");
                 newComments.push(this);
 
                 comments[hash] = 1;
@@ -197,7 +198,15 @@ var loop = function () {
                 if (first) {$.scrollTo($(this), 1000); first = false;}
             }
 
-        })
+        });
+
+        $(".nextNew").click(function(e){
+           var _this = $(this).parent();
+           var ind = _.indexOf(newComments, _this);
+           if (ind !== -1) {
+               $.scrollTo($(newComments[ind+1]),1000);
+           } 
+        });
     });
 
 
