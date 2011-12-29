@@ -83,6 +83,8 @@ var hnCW = {
     },
     init: function () {
 
+        this.showLoader();
+
         this.commentCount = this.getCommentCount();
         this.reapplyCSS();
         _that = this;
@@ -95,6 +97,12 @@ var hnCW = {
             _that.comments[thisComment.hash] = thisComment;
 
         });
+
+         $("#hnCW .#hncLoader").remove();
+    },
+
+    showLoader: function() {
+      $("body").append(this.loadingOverlay);  
     },
 
     getCommentCount: function(){
@@ -112,7 +120,7 @@ var hnCW = {
         _this = this;
         _this.newComments = [];
 
-        $("body").append(_this.loadingOverlay);
+        _this.showLoader();
         
         var thisUrl = document.location.href;
         $.get(thisUrl, function (data) {
@@ -120,7 +128,7 @@ var hnCW = {
             // update the page        
             $("body").html(data);
             $("body").attr("id","hnCW");
-            $("body").append(_this.loadingOverlay);
+            _this.showLoader();
             _this.reapplyCSS();
 
             // check whats new
@@ -169,7 +177,7 @@ var hnCW = {
                     if (first) {$.scrollTo($(this), 1000); first = false;}
                 }
 
-                $("#hnCW .loading").remove();
+                $("#hnCW .#hncLoader").remove();
 
 
             });
