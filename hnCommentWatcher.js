@@ -41,6 +41,11 @@ var hnCW = {
         #hnCW #hncLoader div p { \
             margin: 70px 0 0; \
         } \
+        #hncWatching { \
+            padding: 0 40px; \
+            color: #fff; \
+            font-weight: bold; \
+        } \
         ",
     
     nextButton: $("<p><a class='nextNew' href='#'>Next</a>"),
@@ -91,6 +96,7 @@ var hnCW = {
         _that = this;
 
         $("body").attr("id","hnCW");
+        $(".pagetop:last").parent().prev("td").append("<span id='hncWatching'>hnCommentWatcher observing</span>");
         $(".default").each(function (comment) {
 
             thisComment = _that.processComment(comment);
