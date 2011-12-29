@@ -48,10 +48,10 @@ var hnCW = {
     processComment: function(comment) {
 
         // if it has content
-        if ($(".comment", comment).length > 0) {
+        if ($(".comment:first", comment).length > 0) {
 
             // console.log(comment)
-            var txt = $(".comment", comment).text();
+            var txt = $(".comment:first", comment).text();
 
         } else {
             var txt = "";        
