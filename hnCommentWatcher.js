@@ -68,8 +68,7 @@ var hnCW = {
 
         } else {
             var txt = "";
-            console.log("no text");
-            console.log(comment)       
+               
         }
         var hashObj = Jenkins.hashlittle2(txt,1);
         var thisComment = {
@@ -82,8 +81,6 @@ var hnCW = {
             type: "old",
             age: 0
         }
-        console.log(txt);
-        console.log(hashObj);
 
         // check if comment has a parent and siblings
         if (thisComment.depth > 0) {
