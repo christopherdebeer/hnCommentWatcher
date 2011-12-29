@@ -5,13 +5,14 @@ var hnCW = {
     newComments: [],
 
     init: function () {
-        this.commentCount = this.getCommentCount();
+        _this = this;
+        _this.commentCount = _this.getCommentCount();
         $(".default").each(function (comment) {
             var text = $(".comment", this).text();
             var hashObj = Jenkins.hashlittle2(text,1);
             var hash = hashObj.b.toString() + hashObj.c.toString();
 
-            this.comments[hash] = 6;
+            _this.comments[hash] = 6;
         });
     },
 
@@ -22,7 +23,6 @@ var hnCW = {
     loop: function () {
 
         _this = this;
-
         _this.newComments = [];
         
         var thisUrl = document.location.href;
