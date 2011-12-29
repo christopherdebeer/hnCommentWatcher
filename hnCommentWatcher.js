@@ -25,7 +25,12 @@ var hnCW = {
 
     processComment: function(comment) {
 
-        var txt = $(".comment", comment).text();
+        // if it has content
+        if ($(".comment", comment).length > 0) {
+            var txt = $(".comment", comment).text();
+        } else {
+            var txt = "";        
+        }
 
         var thisComment = {
             depth: parseInt($(comment).parent().find("td:first img").attr("width")) > 0 ? parseInt($(comment).parent().find("td:first img").attr("width")) / 40 : 0,
