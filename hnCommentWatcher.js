@@ -98,7 +98,7 @@ var hnCW = {
 
         });
 
-         $("#hnCW .#hncLoader").remove();
+         $("#hnCW #hncLoader").remove();
     },
 
     showLoader: function() {
@@ -177,7 +177,7 @@ var hnCW = {
                     if (first) {$.scrollTo($(this), 1000); first = false;}
                 }
 
-                $("#hnCW .#hncLoader").remove();
+                $("#hnCW #hncLoader").remove();
 
 
             });
