@@ -31,7 +31,9 @@ var hnCW = {
         _this.reapplyCSS();
         $("body").attr("id","hnCW");
         $(".default").each(function (comment) {
-            _this.comments[hash] = processComment(comment);
+
+            thisComment = processComment(comment)
+            _this.comments[thisComment.hash] = thisComment;
         });
     },
 
