@@ -108,7 +108,7 @@ var hnCW = {
 
         $("body").attr("id","hnCW");
         $(".pagetop:last").parent().prev("td").append(this.hncTitle);
-        $(".default").each(function (comment) {
+        $(".default").each(function (i,comment) {
 
             thisComment = _that.processComment(comment);
             thisComment.age = 6;
@@ -162,7 +162,7 @@ var hnCW = {
 
             var $coms = $(".default");
             if ($coms.length <= 0){$("#hnCW #hncLoader").remove();}
-            $coms.each(function (comment) {
+            $coms.each(function (i, comment) {
                 
                 thisComment = _this.processComment(comment);
 
