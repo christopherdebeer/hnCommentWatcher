@@ -27,15 +27,18 @@ var hnCW = {
             z-index: 999999; \
             top: 0; \
         } \
-        #hnCW #hncLoader div{ \
-            width: 100px; \
-            height: 100px; \
+        #hnCW #hncLoader div { \
+            width: 200px; \
+            padding: 20px; \
             background: url(" + hncBase + "assets/loader.gif) center center no-repeat #FF6600; \
             margin: 100px auto; \
             border-radius: 10px; \
             color: #fff; \
             font-weight: bold; \
             text-align: center; \
+        } \
+        #hnCW #hncLoader div p { \
+            margin-top: 70px;
         } \
         ",
     
