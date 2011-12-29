@@ -135,6 +135,7 @@ var hnCW = {
 
                     // new comment
                     _this.newComments[thisComment.hash] = thisComment;
+                    console.log("should have added comment to newCOmments: ", _this.newComments)
 
                     $(this).append(_this.nextButton.clone());
                     $(this).addClass("hncNew");
