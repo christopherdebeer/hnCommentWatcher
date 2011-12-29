@@ -156,7 +156,7 @@ var hnCW = {
                     if (first) {$.scrollTo($(this), 1000); first = false;}
                 }
 
-                // $("#hnCW .loading").remove();
+                $("#hnCW .loading").remove();
 
 
             });
