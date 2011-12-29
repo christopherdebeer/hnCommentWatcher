@@ -38,7 +38,7 @@ var hnCW = {
             text-align: center; \
         } \
         #hnCW #hncLoader div p { \
-            margin-top: 70px;
+            margin-top: 70px; \
         } \
         ",
     
