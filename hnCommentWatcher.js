@@ -99,9 +99,9 @@ var hnCW = {
                     _this.newComments[hash] = this;
 
                     _this.comments[hash] = {
-                        parent = null,
-                        siblingsCount = null,
-                        rank = 0
+                        parent: null,
+                        siblingsCount: null,
+                        rank: 0
                     };
                     $(this).addClass("hncNew");
 
