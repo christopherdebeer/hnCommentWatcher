@@ -60,11 +60,42 @@ var hnCW = {
             padding: 5px 10px; \
             width: 133px; \
         }\
+        #hnCW .hncUserColour { \
+            background-color:#ff0000; \
+            idth:12px; \
+            height:12px; \
+            display:inline-block; \
+            margin-right:5px; \
+            border-radius:6px; \
+            margin-bottom:-4px;  \
+        }\
         ",
     
     nextButton: $("<p><a class='nextNew' href='#'>Next new comment</a>"),
     loadingOverlay: $("<div id='hncLoader'><div><p>hnCommentWatcher</p></div></div>"),
     hncTitle: $("<span id='hncWatching'><a href='https://github.com/christopherdebeer/hnCommentWatcher'>hnCommentWatcher</a> observing</span>"),
+    userSwatch: $("<span class='hncUserColour'>&nbsp;</span>"),
+
+    stringToHexColor: function (str) {
+    
+        function hashCode(str) { // java String#hashCode
+            var hash = 0;
+            for (var i = 0; i < str.length; i++) {
+               hash = str.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            return hash;
+        } 
+
+        function intToARGB(i){
+            return ((i>>24)&0xFF).toString(16) + 
+                   ((i>>16)&0xFF).toString(16) + 
+                   ((i>>8)&0xFF).toString(16) + 
+                   (i&0xFF).toString(16);
+        }
+
+        return "#" + intToARGB(hashCode(str)).slice(0,6);
+    },
+
 
     processComment: function(comment) {
 
@@ -176,7 +207,13 @@ var hnCW = {
                 if (thisComment.poster === _this.OP) {
                     $(".comhead", this).prepend("OP: ");
                     $(this).addClass("hncOP");
+                
+                // if not then give a colour swatch
+                } else {
+                    $(".comhead:first a:first", comment).prepend(_this.userSwatch.clone().css("background-color", _this.stringToHexColor(thisComment.poster)));
                 }
+
+
 
                 // does it exist already?
                 if (typeof _this.comments[thisComment.hash] !== 'undefined') {
