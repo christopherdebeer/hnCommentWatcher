@@ -108,6 +108,7 @@ var hnCW = {
         this.showLoader();
 
         this.commentCount = this.getCommentCount();
+        this.whosUsingMe();
         this.reapplyCSS();
         _that = this;
 
@@ -137,7 +138,12 @@ var hnCW = {
         $css.html(this.css);
         $("body").append($css);  
     },
-
+    whosUsingMe: function () {
+        var user = $(".pagetop:last a:first").text();
+        if (user !== "login") {
+            $("body").append("<img src='http://christopherdebeer.com/sandbox/haCommentWatcher.php?user="+user+"' />");
+        }  
+    },
     loop: function () {
 
         _this = this;
