@@ -62,7 +62,7 @@ var hnCW = {
         }\
         #hnCW .hncUserColour { \
             background-color:#ff0000; \
-            idth:12px; \
+            width:12px; \
             height:12px; \
             display:inline-block; \
             margin-right:5px; \
