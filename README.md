@@ -1,16 +1,16 @@
 hnCommentWatcher
 ===============
 
-There are many bookmarklets for HackerNews but I needed one for watching the comments on posts not just the front page. SO this bookmarklet is for running on Threads/Posts and highlights the newest comments periodically as well as scrolling to the first new comment. I'll fix it up soon.
+I'm one of those many people that procrastinate-by reading Hacker News. So in a helpless attempt to be efficient I've created hnCommentWatcher. Yet another HN bookmarklet. Currently I swear by [@mrspeaker's Hackemup bookmarklet](http://www.mrspeaker.net/2011/04/11/hackernews-bookmarklet/), it really is brilliant, but its only for the front page, and I still find it painful to follow the comment threads for each individual post (which I believe is where I get the most use (see: intellectual stimulation) out of Hacker News). *So this is my solution*.
 
-*Disclaimer:*
+**What it does:**
 
-Heavily based on @mrspeakers HackemUP repo
-I just threw this together it needs alot of refactoring and has comeblatant copy pasting of other peoples code. Until such time as i can organise it, that will have to do.
+hnCommentWatcher is a bookmarklet that you use on individual posts/threads, which then refreshes the page every so often and indicates which comments are new, and allows you to easily navigate between them, meaning you can open a thread read the comments then come back later and follow the discussion without having to decifer which comments are new and which you've already read.
 
+**How to use it:**
 
-*bookmarklet*
+Read the instructions on this projects homepage: [http://christopherdebeer.github.com/hnCommentWatcher/](http://christopherdebeer.github.com/hnCommentWatcher/)
 
-Use the code below in a bookmark:
+**Disclaimer:**
 
-    javascript:(function(){window.hncBase='https://github.com/christopherdebeer/hnCommentWatcher/raw/master/';var%20a=document.getElementsByTagName('head')[0],b=document.createElement('script');b.type='text/javascript';b.src=hncBase+'hnCW.js?'+Math.floor(Math.random()*99999);a.appendChild(b);})();%20void%200
+This is a work in progress I just made it, so it might be a bit buggy in some browsers that I havnt tested yet. Also this page could do with a few proof reads. If you have any feedback or bug reports, please post them to [the issues page of this projects github repo](https://github.com/christopherdebeer/hnCommentWatcher/issues). 
