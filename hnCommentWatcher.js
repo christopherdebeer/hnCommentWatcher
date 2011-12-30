@@ -139,7 +139,7 @@ var hnCW = {
         this.showLoader();
 
         this.commentCount = this.getCommentCount();
-        this.whosusingMe();
+        this.whosUsingMe();
         this.reapplyCSS();
         _that = this;
 
